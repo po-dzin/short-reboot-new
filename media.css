@@ -1,0 +1,6 @@
+@media (max-width: 767px) {
+  h1 { font-size: 30px; }
+  h2 { font-size: 26px; }
+  .hero-wrap { flex-direction: column; }
+  .nav-links { justify-content: center; }
+}
