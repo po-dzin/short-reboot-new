@@ -14,6 +14,14 @@
   --shadow-elevated: 0 18px 44px rgba(71, 55, 35, 0.12);
   --radius: 18px;
   --transition: 0.4s ease-in-out;
+  --cta: #e47a45;
+  --cta-hover: #cf5e24;
+  --text-on-cta: #ffffff;
+  --radius-xl: 28px;
+  --shadow-cta: 0 10px 24px rgba(228, 122, 69, 0.25);
+  --shadow-cta-hover: 0 12px 28px rgba(207, 94, 36, 0.35);
+  --space-y: clamp(24px, 6vw, 56px);
+  --space-y-tight: clamp(12px, 3vw, 24px);
 }
 
 * { box-sizing: border-box; }
@@ -47,6 +55,15 @@ a:focus-visible {
   width: min(1040px, 100%);
   margin: 0 auto;
   padding: 0 1.5rem;
+}
+
+section {
+  padding: var(--space-y) 1.2rem;
+  margin: 0 auto;
+}
+
+section + section {
+  margin-top: var(--space-y-tight);
 }
 
 header {
@@ -101,44 +118,93 @@ header {
   background: rgba(164, 206, 191, 0.35);
 }
 
-.btn {
-  background: var(--accent-warm);
-  color: #fff;
-  border-radius: var(--radius);
-  padding: 0.9rem 2rem;
-  font-weight: 600;
-  text-decoration: none;
-  box-shadow: 0 14px 28px rgba(228, 122, 69, 0.25);
-  transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+a.btn,
+.btn,
+.button-pay,
+.cta,
+button.cta,
+.cta-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  padding: 1rem 1.4rem;
+  min-height: 48px;
+  border-radius: var(--radius-xl);
+  background: var(--cta);
+  color: var(--text-on-cta) !important;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  box-shadow: var(--shadow-cta);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease, background-color 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
   border: none;
   cursor: pointer;
 }
 
+a.btn:hover,
 .btn:hover,
-.btn:focus-visible {
-  background: var(--accent-warm-dark);
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 18px 34px rgba(208, 102, 53, 0.25);
+.button-pay:hover,
+.cta:hover,
+button.cta:hover,
+.cta-button:hover,
+a.btn:focus-visible,
+.btn:focus-visible,
+.button-pay:focus-visible,
+.cta:focus-visible,
+button.cta:focus-visible,
+.cta-button:focus-visible {
+  background: var(--cta-hover);
+  color: var(--text-on-cta) !important;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-cta-hover), 0 0 0 3px rgba(228, 122, 69, 0.25);
+  outline: none;
+  opacity: 1 !important;
+  filter: none;
+}
+
+a.btn:active,
+.btn:active,
+.button-pay:active,
+.cta:active,
+button.cta:active,
+.cta-button:active {
+  transform: translateY(0);
+  filter: brightness(0.98);
+}
+
+a.btn[disabled],
+.btn[disabled],
+.button-pay[disabled],
+.cta[disabled],
+button.cta[disabled],
+.cta-button[disabled] {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+a.btn *,
+.btn *,
+.button-pay *,
+.cta *,
+button.cta *,
+.cta-button * {
+  color: inherit !important;
+  mix-blend-mode: normal !important;
+  opacity: 1 !important;
 }
 
 .btn-secondary {
   background: var(--accent-breath);
-  color: #1f4f46;
+  color: #1f4f46 !important;
   box-shadow: 0 10px 26px rgba(165, 225, 210, 0.35);
 }
 
 .btn-secondary:hover,
 .btn-secondary:focus-visible {
   background: #8edec8;
-  color: #18463d;
-}
-
-.section {
-  padding: 6rem 0;
+  color: #18463d !important;
 }
 
 .section-soft {
@@ -543,6 +609,54 @@ blockquote {
 @media (min-width: 768px) {
   .mobile-cta {
     display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    display: none !important;
+  }
+
+  section {
+    padding: 28px 16px;
+  }
+
+  section + section {
+    margin-top: 12px;
+  }
+
+  .section {
+    padding: 28px 16px;
+  }
+
+  .section + .section {
+    margin-top: 12px;
+  }
+
+  a.btn,
+  .btn,
+  .button-pay,
+  .cta,
+  button.cta,
+  .cta-button {
+    width: 100%;
+  }
+
+  h1,
+  h2,
+  h3 {
+    margin: 0 0 12px;
+    line-height: 1.2;
+  }
+
+  p {
+    margin: 0 0 12px;
+  }
+
+  .block,
+  .container,
+  .wrapper {
+    margin-bottom: 12px;
   }
 }
 
