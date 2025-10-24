@@ -101,10 +101,18 @@ header {
 
 .nav-links {
   display: flex;
-  gap: 0.9rem;
-  flex-wrap: wrap;
   font-size: 0.95rem;
   font-weight: 500;
+}
+
+.nav-links ul {
+  display: flex;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .nav-links a {
@@ -664,6 +672,88 @@ blockquote {
   .container,
   .wrapper {
     margin-bottom: 12px;
+  }
+}
+
+@media (min-width: 769px) {
+  header nav,
+  .header__nav {
+    display: flex;
+    align-items: center;
+  }
+
+  header nav ul {
+    display: flex;
+    align-items: center;
+    gap: clamp(24px, 6vw, 56px);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  header nav li {
+    display: flex;
+    align-items: center;
+  }
+
+  header nav a {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    height: 44px;
+    line-height: 1;
+    padding: 0 0.25rem;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: 0 !important;
+    border-radius: 8px;
+  }
+
+  header nav a:hover::after {
+    content: "";
+    position: absolute;
+    left: 0.25rem;
+    right: 0.25rem;
+    bottom: 8px;
+    height: 2px;
+    background: #e47a45;
+    opacity: 0.35;
+    border-radius: 2px;
+  }
+
+  header nav a::before,
+  header nav a::after {
+    box-shadow: none !important;
+    background: transparent !important;
+  }
+}
+
+@media (max-width: 768px) {
+  body h1:first-of-type {
+    font-size: clamp(28px, 7vw, 40px) !important;
+    line-height: 1.15 !important;
+    margin-bottom: 8px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  #hero :is(.cta-button, .button-pay, .btn, .cta) {
+    width: 100%;
+    min-height: 52px;
+    margin-bottom: max(12px, env(safe-area-inset-bottom));
+  }
+
+  #hero .cta-button + :is(.button-pay, .btn, .cta),
+  #hero .button-pay + :is(.cta-button, .btn, .cta),
+  #hero .btn + :is(.cta-button, .button-pay, .cta),
+  #hero .cta + :is(.cta-button, .button-pay, .btn) {
+    display: none !important;
+  }
+
+  @supports(selector(:has(*))) {
+    #hero:has(.cta-button) .button-pay {
+      display: none !important;
+    }
   }
 }
 
