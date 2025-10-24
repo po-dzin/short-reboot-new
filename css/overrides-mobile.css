@@ -1,0 +1,204 @@
+/* =============================================
+   SHORT-REBOOT — header vertical align + CTA unify + mobile spacing
+   Drop this AFTER your main stylesheet.
+   It DOES NOT change element order; only alignment/looks.
+   ============================================= */
+
+:root{
+  /* CTA tokens */
+  --cta: #E47A45;
+  --cta-hover: #CF5E24;
+  --on-cta: #FFFFFF;
+  --radius-xl: 28px;
+  --shadow-cta: 0 10px 24px rgba(228,122,69,.25);
+  --shadow-cta-hover: 0 12px 28px rgba(207,94,36,.35);
+
+  /* Header rhythm */
+  --header-h: 72px;                 /* total visual height on desktop */
+  --wrap: min(1200px, 100% - 64px); /* content width helper */
+}
+
+/* ---------------------------------------------
+   1) DESKTOP — vertical centering for header/nav
+   --------------------------------------------- */
+@media (min-width: 769px){
+  /* Make header container vertically center its children */
+  .header, header{
+    min-height: var(--header-h);
+    background: rgba(255,255,255,.72);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0,0,0,.04);
+  }
+
+  /* Inner line: supports multiple possible class names */
+  .header__inner, header .header-inner, header .container, header > .wrap{
+    width: var(--wrap);
+    margin-inline: auto;
+    min-height: var(--header-h);
+    display: flex;
+    align-items: center;            /* <— vertical alignment */
+    gap: 24px;
+    padding-block: 12px;            /* small breathing space */
+  }
+
+  /* Brand zone: logo + title baseline fix */
+  .header__brand, header .brand, header .logo{
+    display: inline-flex;
+    align-items: center;            /* vertical center */
+    gap: 10px;
+    white-space: nowrap;
+    text-decoration: none;
+  }
+  .header__brand img, header .brand img, header .logo img{
+    display: block;                 /* kill baseline gap */
+    height: 28px;
+  }
+
+  /* NAV — keep items aligned without changing their order */
+  .header__nav, header nav{
+    display: flex;
+    align-items: center;            /* <— vertical center of links */
+    gap: clamp(24px, 6vw, 56px);
+  }
+  .header__nav a, header nav a{
+    display: inline-flex;           /* for vertical centering of text */
+    align-items: center;
+    height: 44px;                   /* hit area */
+    line-height: 1;                 /* avoid baseline drift */
+    padding-inline: .25rem;
+    border-radius: 12px;
+    color: #2B2B2B;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color .2s ease, color .2s ease;
+  }
+  .header__nav a:hover, header nav a:hover{ background: rgba(0,0,0,.05); }
+
+  /* Right CTA (any existing class names kept intact) */
+  .cta-button, .header .cta, header .cta, header .button-pay{
+    display: inline-flex; align-items: center; justify-content: center;
+    min-height: 44px; padding: .85rem 1.4rem;
+    border-radius: var(--radius-xl);
+    background: var(--cta); color: var(--on-cta) !important;
+    font-weight: 800; letter-spacing: .02em; text-decoration: none;
+    box-shadow: var(--shadow-cta);
+    transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease;
+    border: none;
+  }
+  .cta-button:hover, .header .cta:hover, header .cta:hover, header .button-pay:hover,
+  .cta-button:focus-visible, .header .cta:focus-visible, header .cta:focus-visible, header .button-pay:focus-visible{
+    background: var(--cta-hover); color: var(--on-cta) !important;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-cta-hover), 0 0 0 3px rgba(228,122,69,.25);
+    outline: none;
+  }
+}
+
+/* ---------------------------------------------
+   2) MOBILE — keep previous decision (hide header)
+   --------------------------------------------- */
+@media (max-width: 768px){
+  .header, header{ display: none !important; }
+}
+
+/* ---------------------------------------------
+   3) Global CTA unification (desktop + mobile)
+   --------------------------------------------- */
+/* Covers common classes used on the LP so far */
+ a.btn, .btn, .button-pay, .cta, button.cta, .cta-button{
+  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+  min-height: 48px; padding: 1rem 1.4rem;
+  border-radius: var(--radius-xl);
+  background: var(--cta);
+  color: var(--on-cta) !important;
+  font-weight: 800; letter-spacing: .02em;
+  text-decoration: none; border: none;
+  box-shadow: var(--shadow-cta);
+  transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease;
+  -webkit-tap-highlight-color: transparent;
+ }
+ a.btn:hover, .btn:hover, .button-pay:hover, .cta:hover, button.cta:hover, .cta-button:hover,
+ a.btn:focus-visible, .btn:focus-visible, .button-pay:focus-visible, .cta:focus-visible, button.cta:focus-visible, .cta-button:focus-visible{
+  background: var(--cta-hover); color: var(--on-cta) !important;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-cta-hover), 0 0 0 3px rgba(228,122,69,.25);
+  outline: none;
+ }
+ a.btn:active, .btn:active, .button-pay:active, .cta:active, button.cta:active, .cta-button:active{ transform: none; }
+ a.btn *, .btn *, .button-pay *, .cta *, button.cta *, .cta-button *{ color: inherit !important; mix-blend-mode: normal !important; opacity: 1 !important; }
+ @media (max-width: 768px){ a.btn, .btn, .button-pay, .cta, button.cta, .cta-button{ width: 100%; } }
+
+/* ---------------------------------------------
+   4) Mobile spacing tightening (kept from previous patch)
+   --------------------------------------------- */
+section{ padding: clamp(40px, 6vw, 72px) 1.5rem; margin: 0 auto; }
+section + section{ margin-top: clamp(12px, 2vw, 24px); }
+@media (max-width: 768px){
+  section{ padding: 28px 16px; }
+  section + section{ margin-top: 12px; }
+  h1,h2,h3{ margin: 0 0 12px; line-height: 1.2; }
+  p{ margin: 0 0 12px; }
+}
+
+/* =====================================================
+   HERO (FIRST SCREEN) — MOBILE BUGFIX PATCH v1
+   Purpose: smaller H1 on phones, single CTA, safe-area padding,
+            compact chips, and a dedicated media slot for hero image.
+   Note: HTML scaffold for hero is included BELOW in a CSS comment.
+   ===================================================== */
+
+/* ——— HERO container ——— */
+.hero{
+  padding: 24px 16px calc(20px + env(safe-area-inset-bottom)); /* iOS safe area */
+  background: radial-gradient(120% 80% at 50% 0%, #F6FBF7 0%, #F3EFEA 100%);
+}
+.hero__wrap{
+  display: grid;
+  grid-template-columns: 1fr; /* mobile first */
+  gap: 16px;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+.hero__text{ text-align: center; }
+
+/* ——— Headline & lead ——— */
+.hero h1{
+  font-weight: 900;
+  font-size: clamp(28px, 7vw, 40px);
+  line-height: 1.15;
+  letter-spacing: .01em;
+  margin: 0 0 8px;
+  hyphens: auto;
+  overflow-wrap: anywhere;
+}
+.hero__lead{
+  font-size: clamp(15px, 4.2vw, 18px);
+  line-height: 1.5;
+  color: #3A3A3A;
+  margin: 0 auto 16px;
+  max-width: 40ch;
+}
+
+/* ——— CTA: one button on hero, 100% width on phones ——— */
+#hero .cta-button{ width: 100%; min-height: 52px; }
+#hero a.cta-button:not(:first-of-type){ display: none !important; } /* hide accidental duplicates */
+
+/* ——— Chips / pills ——— */
+.hero__chips{ display: grid; gap: 10px; margin-top: 14px; }
+.hero__chips > *{ margin: 0 !important; }
+
+/* ——— Media (hero image) ——— */
+.hero__media{ order: 2; display: grid; place-items: center; }
+.hero__media img{ width: min(420px, 80vw); height: auto; display: block; }
+
+/* ——— Desktop layout: split into two columns ——— */
+@media (min-width: 769px){
+  .hero{ padding: 56px 24px; }
+  .hero__wrap{ grid-template-columns: 1.1fr .9fr; align-items: center; gap: 32px; }
+  .hero__text{ text-align: left; }
+  .hero h1{ font-size: clamp(36px, 4.2vw, 56px); }
+  .hero__lead{ margin-left: 0; max-width: 48ch; }
+  #hero .cta-button{ width: auto; }
+  .hero__media{ order: 0; }
+  .hero__media img{ width: min(520px, 42vw); }
+}
