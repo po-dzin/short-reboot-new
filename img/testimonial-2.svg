@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 360" role="img" aria-labelledby="title desc">
+  <title id="title">Відгук 2</title>
+  <desc id="desc">Фон із цитатою про роботу в офісі.</desc>
+  <defs>
+    <linearGradient id="bg" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffe9df" />
+      <stop offset="100%" stop-color="#fbc0a9" />
+    </linearGradient>
+  </defs>
+  <rect width="520" height="360" rx="28" fill="url(#bg)" />
+  <text x="40" y="80" font-family="'Inter', sans-serif" font-size="22" font-weight="700" fill="#ef3b24">«Комплекс рятує в офісі: 10 хвилин</text>
+  <text x="40" y="120" font-family="'Inter', sans-serif" font-size="22" font-weight="700" fill="#ef3b24">— і спина відпускає, голова ясна»</text>
+  <text x="40" y="170" font-family="'Inter', sans-serif" font-size="16" fill="#5f5f5f">— Марина, HR-спеціалістка</text>
+  <circle cx="90" cy="250" r="44" fill="#fff" stroke="#ef3b24" stroke-width="6" />
+  <text x="70" y="266" font-family="'Inter', sans-serif" font-size="32" font-weight="700" fill="#ef3b24">M</text>
+</svg>
