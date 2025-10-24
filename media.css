@@ -1,0 +1,44 @@
+@media (max-width: 1024px) {
+  .hero-wrap { gap: 2.2rem; }
+}
+
+@media (max-width: 900px) {
+  .nav { flex-wrap: wrap; justify-content: center; }
+  .nav-links { justify-content: center; }
+}
+
+@media (max-width: 768px) {
+  .section { padding: 4.5rem 0; }
+  h1 { font-size: 2.1rem; }
+  h2 { font-size: 1.7rem; }
+  .hero-wrap { flex-direction: column; text-align: center; }
+  .hero-text { flex: 1 1 auto; }
+  .hero-media { order: -1; }
+  .cta-row { align-items: center; }
+  .hero-trust { text-align: center; }
+  .author { flex-direction: column; text-align: center; }
+  .author-info { flex: 1 1 auto; }
+  .badges { justify-content: center; }
+  .list li { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 600px) {
+  body { font-size: 0.98rem; }
+  .nav-links { gap: 0.5rem; }
+  .btn { width: 100%; }
+  .grid-3 { gap: 1.6rem; }
+  .card { padding: 1.6rem; }
+  .order-box { padding: 1.8rem; }
+  .price { font-size: 2.4rem; }
+}
+
+@media (max-width: 480px) {
+  header { position: static; }
+  .brand { justify-content: center; width: 100%; }
+  .nav { gap: 0.6rem; }
+  .hero { padding-top: 3.2rem; }
+  .tags { justify-content: center; }
+  .tag { text-align: center; }
+  .mobile-cta { padding: 0.8rem 1.2rem calc(env(safe-area-inset-bottom, 12px) + 0.8rem); }
+  .mobile-cta a { width: 100%; text-align: center; }
+}

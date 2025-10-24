@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Логотип Short-перезавантаження</title>
+  <desc id="desc">Мінімалістична емблема з літерою S у теплому градієнті.</desc>
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff7b5c" />
+      <stop offset="100%" stop-color="#ef3b24" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#grad)" />
+  <path d="M20 20c0-4.418 4.03-8 9-8h6c7.18 0 13 5.82 13 13s-5.82 13-13 13h-8c-2.21 0-4 1.79-4 4s1.79 4 4 4h18" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
