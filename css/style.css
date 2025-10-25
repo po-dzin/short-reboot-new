@@ -115,14 +115,14 @@ header {
   list-style: none;
 }
 
-.nav-links a {
+.nav-links a:not(.btn) {
   padding: 0.4rem 0.6rem;
   border-radius: 999px;
   transition: background var(--transition), color var(--transition);
 }
 
-.nav-links a:hover,
-.nav-links a:focus-visible {
+.nav-links a:not(.btn):hover,
+.nav-links a:not(.btn):focus-visible {
   background: rgba(164, 206, 191, 0.35);
 }
 
@@ -248,6 +248,11 @@ p { margin: 0 0 1rem; font-weight: 300; color: var(--text-dark); }
 .hero {
   position: relative;
   overflow: hidden;
+}
+
+.section.hero {
+  padding-top: clamp(40px, 9vw, 92px);
+  padding-bottom: clamp(48px, 10vw, 104px);
 }
 
 .breath-bg {
@@ -540,6 +545,51 @@ footer a:focus-visible {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
+.footer-social {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0;
+  margin: 0.5rem 0 0;
+  list-style: none;
+}
+
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  color: #f1ede7;
+}
+
+.footer-social a:hover,
+.footer-social a:focus-visible {
+  transform: translateY(-2px);
+  background: rgba(228, 122, 69, 0.3);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.28);
+}
+
+.footer-social svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
 .mobile-cta {
   position: fixed;
   left: 0;
@@ -789,5 +839,56 @@ blockquote {
   .breathe,
   .breath-bg {
     animation: none !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .nav-links ul {
+    gap: clamp(24px, 6vw, 56px);
+  }
+
+  .nav-links li {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-links a:not(.btn) {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    height: 44px;
+    line-height: 1;
+    padding: 0 0.25rem;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: 0 !important;
+    border-radius: 8px;
+  }
+
+  .nav-links a:not(.btn):hover,
+  .nav-links a:not(.btn):focus-visible {
+    background: transparent !important;
+  }
+
+  .nav-links a:not(.btn)::before {
+    display: none;
+  }
+
+  .nav-links a:not(.btn)::after {
+    content: "";
+    position: absolute;
+    left: 0.25rem;
+    right: 0.25rem;
+    bottom: 8px;
+    height: 2px;
+    background: #e47a45;
+    opacity: 0;
+    border-radius: 2px;
+    transition: opacity 0.2s ease;
+  }
+
+  .nav-links a:not(.btn):hover::after,
+  .nav-links a:not(.btn):focus-visible::after {
+    opacity: 0.35;
   }
 }

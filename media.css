@@ -15,7 +15,8 @@
   .hero-media { order: -1; }
   .cta-row { align-items: center; width: 100%; }
   .hero-trust { text-align: center; }
-  .tags { justify-content: center; }
+  .tags { justify-content: center; margin: 1.2rem 0 1.6rem; }
+  .section.hero { padding-top: clamp(24px, 7vw, 48px); padding-bottom: clamp(40px, 11vw, 72px); }
   .author { flex-direction: column; text-align: center; }
   .author-info { flex: 1 1 auto; }
   .badges { justify-content: center; }
@@ -34,7 +35,7 @@
 @media (max-width: 480px) {
   .brand { justify-content: center; width: 100%; }
   .nav { gap: 0.6rem; }
-  .hero { padding-top: 3.2rem; }
+  .section.hero { padding-top: clamp(18px, 6vw, 28px); padding-bottom: clamp(28px, 12vw, 48px); }
   .tags { justify-content: center; }
   .tag { text-align: center; }
   .mobile-cta { padding: 0.8rem 1.2rem calc(env(safe-area-inset-bottom, 12px) + 0.8rem); }
