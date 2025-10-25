@@ -657,6 +657,22 @@ blockquote {
     width: 100%;
   }
 
+  #hero {
+    padding-top: 16px;
+  }
+
+  #hero .hero-wrap {
+    gap: 1.6rem;
+  }
+
+  #hero .tags {
+    margin: 1rem 0 1.25rem;
+  }
+
+  #hero .hero-media {
+    margin-top: 0.5rem;
+  }
+
   h1,
   h2,
   h3 {
@@ -696,7 +712,7 @@ blockquote {
     align-items: center;
   }
 
-  header nav a {
+  header nav a:not(.btn) {
     position: relative;
     display: inline-flex;
     align-items: center;
@@ -709,7 +725,7 @@ blockquote {
     border-radius: 8px;
   }
 
-  header nav a:hover::after {
+  header nav a:not(.btn):hover::after {
     content: "";
     position: absolute;
     left: 0.25rem;
@@ -721,8 +737,8 @@ blockquote {
     border-radius: 2px;
   }
 
-  header nav a::before,
-  header nav a::after {
+  header nav a:not(.btn)::before,
+  header nav a:not(.btn)::after {
     box-shadow: none !important;
     background: transparent !important;
   }
