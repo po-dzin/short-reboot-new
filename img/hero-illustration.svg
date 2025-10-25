@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="title desc">
+  <title id="title">Ілюстрація героя курсу</title>
+  <desc id="desc">Стилізований силует людини, що виконує розтяжку, на тлі хвильового градієнта.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fff2ec" />
+      <stop offset="100%" stop-color="#f7c8be" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ef3b24" />
+      <stop offset="100%" stop-color="#f78a58" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" rx="48" fill="url(#bg)" />
+  <path d="M0 420c90-80 210-120 360-120s270 40 360 120v180H0z" fill="#ffe6db" />
+  <path d="M420 140c50 0 96 26 130 70 34 45 56 108 56 177H318c0-61 24-116 57-157 30-37 71-90 71-90z" fill="#ffd4c2" opacity="0.6" />
+  <g fill="none" stroke="url(#accent)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M240 360c40-60 84-90 132-90 48 0 96 30 132 90" />
+    <path d="M372 276c-12-54 12-106 60-126 40-16 84 4 108 46" />
+    <path d="M420 264l54-90" />
+    <path d="M468 210l72 64" />
+  </g>
+  <circle cx="530" cy="150" r="42" fill="url(#accent)" opacity="0.9" />
+  <text x="80" y="520" font-family="'Inter', sans-serif" font-weight="700" font-size="36" fill="#ef3b24">Short-перезавантаження</text>
+  <text x="80" y="560" font-family="'Inter', sans-serif" font-size="26" fill="#5f5f5f">10 хвилин руху та дихання щодня</text>
+</svg>
