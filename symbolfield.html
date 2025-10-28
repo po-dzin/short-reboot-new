@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SymbolField HUD</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/symbolfield.css">
+</head>
+<body data-mode="♾️" data-theme="status">
+  <h1 class="page-title">SymbolField HUD</h1>
+  <main class="grid">
+    <div class="stack">
+      <section class="card">
+        <header class="card__header">
+          <span class="card__title" data-state-title>Состояние</span>
+          <label class="select">
+            <span class="sr-only">Language</span>
+            <select data-lang>
+              <option value="ru">RU</option>
+              <option value="en">EN</option>
+            </select>
+          </label>
+        </header>
+        <div class="card__body">
+          <div data-date></div>
+          <div class="row mt16">
+            <span class="badge">Mode</span>
+            <button class="btn" type="button" data-mode="🕳️">🕳️</button>
+            <button class="btn" type="button" data-mode="♾️" aria-current="true">♾️</button>
+            <button class="btn" type="button" data-mode="🔆">🔆</button>
+          </div>
+          <p class="hint" data-mode-hint>flow · synthesis · resonance</p>
+          <div class="row mt16">
+            <span class="badge">Glyph</span>
+            <button class="btn" type="button" data-glyph="•">•</button>
+            <button class="btn" type="button" data-glyph="∣">∣</button>
+            <button class="btn" type="button" data-glyph="◯" aria-current="true">◯</button>
+            <button class="btn" type="button" data-glyph="⊙">⊙</button>
+            <button class="btn" type="button" data-glyph="∿">∿</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <header class="card__header">
+          <span class="card__title" data-xp-title>Панель опыта</span>
+        </header>
+        <div class="card__body" data-xp></div>
+      </section>
+    </div>
+
+    <div class="stack">
+      <section class="card">
+        <header class="card__header">
+          <span class="card__title">/arc + /quest</span>
+        </header>
+        <div class="card__body" data-arc-quest>Арка A1 — Пробуждение · Квест: стабилизировать ритуальный цикл</div>
+      </section>
+      <section class="card">
+        <header class="card__header">
+          <span class="card__title">/quote</span>
+        </header>
+        <div class="card__body" data-quote>«Кольцо дышит. Зерно светится. Тишина держит форму.»</div>
+      </section>
+      <section class="card">
+        <header class="card__header">
+          <span class="card__title">/reminder</span>
+        </header>
+        <div class="card__body" data-reminder>∣ ◯ ⊙ → Випассана + дыхание + заряд (08:00)</div>
+      </section>
+    </div>
+
+    <div class="stack">
+      <section class="card">
+        <header class="card__header">
+          <span class="card__title">/xp + /audit</span>
+        </header>
+        <div class="card__body">
+          <div class="list" data-log></div>
+        </div>
+      </section>
+      <section class="card">
+        <header class="card__header">
+          <span class="card__title">Theme</span>
+        </header>
+        <div class="card__body">
+          <label class="select">
+            <span class="sr-only">Theme</span>
+            <select data-theme>
+              <option value="status">Статус-зависимая</option>
+              <option value="dark">Dark</option>
+              <option value="zen">Zen</option>
+              <option value="light">Light</option>
+            </select>
+          </label>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="js/symbolfield-hud.js"></script>
+</body>
+</html>
